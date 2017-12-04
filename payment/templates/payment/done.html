@@ -1,0 +1,10 @@
+{% extends "shop/base.html" %}
+
+{% block content %}
+    <h1>Your payment was successful</h1>
+    <p>Your payment has been successfully received.</p>
+ <p class="text-right">
+    <a href="{% url "shop:product_list" %}" class="button light">Shop again</a>
+ </p>
+<iframe name='proprofs' id='proprofs' style='overflow-x:hidden !important;' width='850' height='515' frameborder=0 marginwidth=0 marginheight=0 src='http://www.proprofs.com/survey/t/?title=tolft&id=80237&felx=embed'></iframe><div style='margin-top:10px; font-size:10px; font-family:Arial, Helvetica, sans-serif; text-align:center; width:450'><a href='https://www.proprofs.com/survey/' target='_blank' rel='nofollow' title='Create a Survey'>Create a Survey</a></div>
+{% endblock %}

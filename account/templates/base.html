@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>{% block title %}Savvy Mavvies{% endblock %}</title>
+    <link href="{% static "css/base.css" %}" rel="stylesheet">
+</head>
+<body>
+    <div id="header">
+        <img src="{% static "img/logo.JPG" %}" width="170" height="120" >
+        <a href="/" class="logo">Shop Savvy Mavvies Services</a>
+    </div>
+    <div id="subheader">
+        <div class="cart">
+            {% with total_items=cart|length %}
+
+                    Your cart: 
+                    <a href="{% url "cart:cart_detail" %}">
+                        <img src="{% static "img/shoppingcart.jpg" %}" height=40px>
+                        {{ total_items }} item{{ total_items|pluralize }}, ${{ cart.get_total_price }}
+                    </a>
+
+            {% endwith %}
+             <span class="user">
+                 {% if request.user.is_authenticated %}
+                     Hello {{ request.user.first_name }}, <a href="{% url "logout" %}">Logout</a>
+                 {% else %}
+                <a href="{% url "login" %}">Log-in</a>
+                 {% endif %}
+             </span>
+        </div>
+    </div>
+    <div id="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+<!-- ProProfs Chat code starts -->
+    <div id="l2s_trk" style="z-index:99;">
+        add chat to your website</div><script type="text/javascript">
+        var l2s_pht=escape(location.protocol); if(l2s_pht.indexOf("http")==-1) l2s_pht='http:'; (function () { document.getElementById('l2s_trk').style.visibility='hidden'; var l2scd = document.createElement('script');  l2scd.type = 'text/javascript'; l2scd.async = true; l2scd.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'live2support.com/js/lsjs1.php?stid=30794&jqry=Y&l2stxt='; var l2sscr = document.getElementsByTagName('script')[0]; l2sscr.parentNode.insertBefore(l2scd, l2sscr); })();  </script>
+    <!-- ProProfs Chat code closed -->
+<!-- begin embed code --><script>if(!window.jQuery){ (function() {var jsapi = document.createElement('script'); jsapi.type = 'text/javascript'; jsapi.async = true;jsapi.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'code.jquery.com/jquery-3.1.0.min.js';(document.getElementsByTagName('head')[0] || document.getElementsByTagName('head')[0]).appendChild(jsapi);})(); }</script><script> var ht=window.location.protocol;var custom_field = 'custom_field'; var survey_id='80237';//this is your unique survey id
+							var user_signup_date='';var user_name='';//Current logged in user's name
+							var user_email='';//Current logged in user's email
+							var t = 'tolft';//this is your unique survey title
+							var theme = '000000';var pt = '';var pn = 'right';(function(){setTimeout(function(){var d = document, f = d.getElementsByTagName('script')[0], s = d.createElement('script'); s.type = 'text/javascript';s.async = true; s.src = '//www.proprofs.com/survey/embed/nps_scheduiling_for_all.js?v=17.9p'; f.parentNode.appendChild(s, f);}, 5000);})();</script><!-- end embed code -->
+</body>
+</html>
+

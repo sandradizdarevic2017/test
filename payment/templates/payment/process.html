@@ -1,0 +1,16 @@
+{% extends "shop/base.html" %}
+{% load static %}
+
+{% block title %}Pay using PayPal{% endblock %}
+
+{% block content %}
+    <h1>Pay using PayPal</h1>
+    {{ form.render }}
+<body>
+<p class="text-right">
+        <a href="{% url "shop:product_list" %}" class="button light">Continue shopping</a>
+</p>
+
+</body>
+
+{% endblock %}
