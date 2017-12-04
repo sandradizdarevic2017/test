@@ -25,7 +25,7 @@ SECRET_KEY = '97vqo*t)m)h_3pjjw4(=9m&kc*-_a*30icly_ifg$80jeg_cbz'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','fd03c7a2.ngrok.io','savvymavvies.pythonanywhere.com', 'savviemavvies.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1','savviemavvies.pythonanywhere.com']
 
 
 # Application definition
@@ -43,7 +43,6 @@ INSTALLED_APPS = (
     'orders',
     'paypal.standard.ipn',
     'payment',
-    'social.apps.django_app.default',
 
 
 )
@@ -128,17 +127,9 @@ PAYPAL_TEST = True
 
 
 
-#LOGIN_REDIRECT_URL = '/orders/create'
-#LOGIN_URL = 'login'
-#LOGOUT_URL = 'logout'
-#LOGIN_REDIRECT_URL = 'products'
-LOGIN_REDIRECT_URL ='/'
-#from django.core.urlresolvers import reverse_lazy
 
-#LOGIN_REDIRECT_URL = reverse_lazy('dashboard')
-#LOGIN_URL = reverse_lazy('login')
-#LOGOUT_URL = reverse_lazy('logout')
-#LOGIN_REDIRECT_URL = reverse_lazy('products')
+LOGIN_REDIRECT_URL ='/'
+
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'esu2017fall5@gmail.com'
@@ -146,15 +137,3 @@ EMAIL_HOST_PASSWORD = 'Volimte2017'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
-#AUTHENTICATION_BACKENDS = (
- #   'social.backends.google.GoogleOAuth2',
-
-  #  'django.contrib.auth.backends.ModelBackend',
-   # 'account.authentication.EmailAuthBackend',
-#)
-
-#SOCIAL_AUTH_FACEBOOK_KEY = '212053486003685'
-#SOCIAL_AUTH_FACEBOOK_SECRET = '983893afd8220ec8ae93d5678dd7a133'
-
-#SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '33093874630-3di68rjvhv5eti4l91a0136seuuo6a3p.apps.googleusercontent.com' # Google Consumer Key
-#SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '_ldWZo0TCd2sE-gjW-tDIIMB' # Google Consumer Secret
