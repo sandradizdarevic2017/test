@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'shop',
     'cart',
     'orders',
+    'coupons',
     'paypal.standard.ipn',
     'payment',
 
@@ -132,8 +133,8 @@ LOGIN_REDIRECT_URL ='/'
 
 
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'esu2017fall5@gmail.com'
-EMAIL_HOST_PASSWORD = 'Volimte2017'
+EMAIL_HOST_USER = 'esu2017fall2@gmail.com'
+EMAIL_HOST_PASSWORD = '2ESU2017Fall'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
